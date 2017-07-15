@@ -16,9 +16,11 @@
   box-sizing: border-box;
 }
 body {
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   line-height: 27px;
-  font-family: Arial, sans-serif;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
   color: #f7f4f1;
   font-style: normal;
   background-color: #292929;
@@ -27,23 +29,63 @@ img {
   max-width: 100%;
   height: auto;
 }
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@font-face {
+  font-weight: normal;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  src: url("fonts/ptsans/web/ptsansnarrow.woff2") format("woff2"), url("fonts/ptsans/web/ptsansnarrow.woff") format("woff");
+}
+@font-face {
+  font-weight: 700;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  src: url("fonts/ptsans/web/ptsansnarrowbold.woff2") format("woff2"), url("fonts/ptsans/web/ptsansnarrowbold.woff") format("woff");
+}
 .main-header {
   min-height: 398px;
 }
 .main-header__logo {
   min-height: 85px;
+  text-align: center;
+}
+.page-header__logo img {
+  width: 226px;
+  height: 85px;
 }
 @media (min-width:768px) {
   .main-header {
     position: relative;
     min-height: 71px;
     padding-bottom: 400px;
+    background-color: #000000;
   }
   .main-header__logo {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 400px;
+    background-color: #000000;
+    background-image: url("/img/back-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center -9px;
+    background-size: cover;
+  }
+  .main-header__logo img {
+    position: absolute;
+    bottom: 257px;
+    left: 50%;
+    width: 370px;
+    height: auto;
+    transform: translateX(-50%);
   }
 }
 @media (min-width:1200px) {
@@ -52,6 +94,11 @@ img {
   }
   .main-header__logo {
     height: 648px;
+    background-position: center 0px;
+    background-size: cover;
+  }
+  .main-header__logo img {
+    bottom: 438px;
   }
 }
 .main-nav__list,
