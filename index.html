@@ -15,17 +15,18 @@
 				<img src="img/logotype-mobile.svg" alt="">
 			</div>
 			
-				<nav class="main-nav">
+				<nav class="main-nav main-nav--closed main-nav--nojs">
+					<button class="main-nav__toggle" type="button">Открыть меню</button>
 					<div class="main-nav__wrapper">
 						<ul class="main-nav__list">
-							<li class="main-nav__item"><a class="main-nav__link" href="#">Информация</a></li>
-							<li class="main-nav__item"><a class="main-nav__link" href="#">Новости</a></li>
-							<li class="main-nav__item"><a class="main-nav__link" href="price.html">Прайс лист</a></li>
-							<li class="main-nav__item"><a class="main-nav__link" href="shop.html">Магазин</a></li>
-							<li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+							<li class="main-nav__item main-nav__item--active"><a class="main-nav__link" href="#">Главная</a></li>
+							<li class="main-nav__item"><a class="main-nav__link" href="#">Наши работы</a></li>
+							<li class="main-nav__item"><a class="main-nav__link" href="price.html">Записаться</a></li>
+							<li class="main-nav__item"><a class="main-nav__link" href="shop.html">Контакты</a></li>
+							<li class="main-nav__item"><a class="main-nav__link" href="#">html academy</a></li>
 						</ul>
 						<ul class="main-nav__user-list">
-							<li class="main-nav__item"><a href="#" class="main-nav__link">Вход</a></li>
+							<li class="main-nav__item"><a href="#" class="main-nav__link main-nav__user-link">Вход</a></li>
 						</ul>
 					</div>		
 				</nav>			
@@ -188,6 +189,22 @@
 				<button class="btn" type="submit">Войти</button>
 			</form>
 		</div>
+		<script>
+			var navMain = document.querySelector(".main-nav");
+			var navToggle = document.querySelector(".main-nav__toggle");
+
+			navMain.classList.remove("main-nav--nojs");
+
+			navToggle.addEventListener("click", function() {
+				if (navMain.classList.contains("main-nav--closed")) {
+					navMain.classList.remove("main-nav--closed");
+					navMain.classList.add("main-nav--opened"); 
+				} else {
+					navMain.classList.add("main-nav--closed");
+					navMain.classList.remove("main-nav--opened");
+				}
+			});
+		</script>
 		<!-- <div class="modal-content-map">
 			<button class="modal-content-map__close" type="button" title="Закрыть">Закрыть</button>
 			<div>
